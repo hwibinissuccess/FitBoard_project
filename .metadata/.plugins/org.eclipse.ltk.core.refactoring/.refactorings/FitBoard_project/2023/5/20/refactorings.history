@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;FitBoard_project&apos;&#x0D;&#x0A;- Original project: &apos;FitBoard_project&apos;&#x0D;&#x0A;- Original element: &apos;SwaggerConfig.java&apos;" description="Delete element" element1="back-rest-board/src/main/java/com/ssafy/board/config/SwaggerConfig.java" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="1" stamp="1684305059014" subPackages="false" version="1.0"/>
+</session>
