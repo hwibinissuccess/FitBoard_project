@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public class ReplyDTO {
 	
+	private int id;
 	private String content;
 	private String writer;
 	private LocalDate date;
@@ -14,10 +15,21 @@ public class ReplyDTO {
 	
 	public ReplyDTO(String content, String writer, LocalDate date) {
 		
+		this.id = id;
 		this.content = content;
 		this.writer = writer;
 		this.date = date;
 		
+	}
+
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getContent() {

@@ -1,6 +1,7 @@
 package com.ssafy.board.model.dto;
 
 public class BoardApplyDTO {
+	private int id;
 	private String title;
 	private String content;
 	private int default_max;
@@ -10,13 +11,24 @@ public class BoardApplyDTO {
 	public BoardApplyDTO() {
 	}
 
-	public BoardApplyDTO(String title, String content, int default_max, int volunteers, String writer) {
+	public BoardApplyDTO(int id, String title, String content, int default_max, int volunteers, String writer) {
 		super();
+		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.default_max = default_max;
 		this.volunteers = volunteers;
 		this.writer = writer;
+	}
+
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getTitle() {
@@ -61,9 +73,11 @@ public class BoardApplyDTO {
 
 	@Override
 	public String toString() {
-		return "Board [title=" + title + ", content=" + content + ", default_max=" + default_max + ", volunteers="
-				+ volunteers + ", writer=" + writer + "]";
+		return "BoardApplyDTO [id=" + id + ", title=" + title + ", content=" + content + ", default_max=" + default_max
+				+ ", volunteers=" + volunteers + ", writer=" + writer + "]";
 	}
+
+	
 	
 	
 

@@ -4,20 +4,34 @@ import java.time.LocalDate;
 
 public class BoardCommunityDTO {
 	
+	private int id;
 	private String title;
 	private String content;
 	private LocalDate date;
 	private int number;
+	private String writer;
 	
 	public BoardCommunityDTO() {
 	}
 	
-	public BoardCommunityDTO(String title, String content, LocalDate date, int number) {
+	public BoardCommunityDTO(String title, String content, LocalDate date, int number, String writer) {
 		super();
+		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.date = date;
 		this.number = number;
+		this.writer = writer;
+	}
+
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getTitle() {
@@ -52,11 +66,22 @@ public class BoardCommunityDTO {
 		this.number = number;
 	}
 
+	public String getWriter() {
+		return writer;
+	}
+
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+
 	@Override
 	public String toString() {
-		return "BoardCommunity [title=" + title + ", content=" + content + ", date=" + date + ", number=" + number
-				+ "]";
+		return "BoardCommunityDTO [id=" + id + ", title=" + title + ", content=" + content + ", date=" + date
+				+ ", number=" + number + ", writer=" + writer + "]";
 	}
+
+	
+
 	
 	
 	
