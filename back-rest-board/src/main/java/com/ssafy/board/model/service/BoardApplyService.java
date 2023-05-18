@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.ssafy.board.model.dto.BoardApplyDTO;
 
+
 public interface BoardApplyService {
 	
 	//게시글 등록
