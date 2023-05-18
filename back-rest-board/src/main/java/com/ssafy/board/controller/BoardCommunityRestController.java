@@ -20,7 +20,7 @@ import com.ssafy.board.model.dto.BoardCommunityDTO;
 import com.ssafy.board.model.service.BoardCommunityService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/community")
 public class BoardCommunityRestController {
 
 	private static final String SUCCESS = "succes";

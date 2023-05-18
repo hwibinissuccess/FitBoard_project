@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssafy.board.model.dao.ReplyDao">
 	
-	<resultMap type="reply" id="replyMap">
+	<resultMap type="ReplyDTO" id="replyMap">
 		<id column="id" property="id" />
 		<result column="content" property="content" />
 		<result column="writer" property="writer" />
@@ -12,12 +12,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		
 	</resultMap>
 	
-	<insert id="insertReply" parameterType="Reply" keyProperty="id" useGeneratedKeys="true">
+	<insert id="insertReply" parameterType="ReplyDTO" keyProperty="id" useGeneratedKeys="true">
 		INSERT INTO reply (id, content, writer, regdate)
 		VALUES (#{id},#{content}, #{writer}, #{regdate})
 	</insert>
 
-	<update id="updateReply" parameterType="Reply">
+	<update id="updateReply" parameterType="ReplyDTO">
 		UPDATE reply
 		SET
 		content = #{content},

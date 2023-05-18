@@ -1,7 +1,7 @@
 package com.ssafy.board.model.dto;
 
 public class TrainerDTO {
-	private int id;
+	private String id;
 	private String password;
 	private String image;
 	private String profile;
@@ -12,7 +12,7 @@ public class TrainerDTO {
 	public TrainerDTO() {
 	}
 
-	public TrainerDTO(int id, String password, String image, String profile, String phone,
+	public TrainerDTO(String id, String password, String image, String profile, String phone,
 			String address, int score) {
 		super();
 		this.id = id;
@@ -24,11 +24,11 @@ public class TrainerDTO {
 		this.score = score;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

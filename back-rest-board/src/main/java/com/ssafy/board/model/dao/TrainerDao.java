@@ -3,8 +3,11 @@ package com.ssafy.board.model.dao;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import com.ssafy.board.model.dto.TrainerDTO;
 
+@Mapper
 public interface TrainerDao {
 
 	

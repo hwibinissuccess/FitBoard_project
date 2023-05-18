@@ -5,12 +5,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'main' of https://github.com/hwibinissuccess/FitBoard_project.git
 import com.ssafy.board.model.dao.BoardApplyDao;
 import com.ssafy.board.model.dto.BoardApplyDTO;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class BoardApplyServiceImpl implements BoardApplyService {

@@ -47,7 +47,7 @@ public class TrainerRestController {
 			return new ResponseEntity<Void>(HttpStatus.UNAUTHORIZED);
 		}
 		session.setAttribute("loginTrainer", tmp);
-		return new ResponseEntity<String>(tmp.getName(), HttpStatus.OK);
+		return new ResponseEntity<String>(tmp.getId(), HttpStatus.OK);
 	}
 
 	// 로그아웃

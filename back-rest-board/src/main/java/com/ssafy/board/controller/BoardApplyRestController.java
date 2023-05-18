@@ -21,7 +21,7 @@ import com.ssafy.board.model.service.BoardApplyService;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/apply")
 public class BoardApplyRestController {
 
 	private static final String SUCCESS = "succes";
