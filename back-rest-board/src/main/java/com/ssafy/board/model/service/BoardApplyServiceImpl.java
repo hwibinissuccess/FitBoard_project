@@ -4,10 +4,12 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.ssafy.board.model.dao.BoardApplyDao;
 import com.ssafy.board.model.dto.BoardApplyDTO;
 
+@Service
 public class BoardApplyServiceImpl implements BoardApplyService {
 
 
