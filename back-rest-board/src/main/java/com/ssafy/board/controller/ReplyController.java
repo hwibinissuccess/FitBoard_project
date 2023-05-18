@@ -16,59 +16,60 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ssafy.board.exception.BoardNotFoundException;
-import com.ssafy.board.model.dto.BoardCommunityDTO;
-import com.ssafy.board.model.service.BoardCommunityService;
+import com.ssafy.board.model.dto.ReplyDTO;
+import com.ssafy.board.model.service.ReplyService;
 
 @RestController
 @RequestMapping("/api")
-public class BoardCommunityRestController {
+public class ReplyController {
 
 	private static final String SUCCESS = "succes";
 	private static final String FAIL = "fail";
 
 	@Autowired
-	private BoardCommunityService boardCommunityService;
+	private ReplyService replyService;
 
-	@GetMapping("/board")
-	public ResponseEntity<List<BoardCommunityDTO>> list(@RequestParam(defaultValue = "") String mode,
+	@GetMapping("/board/reply")
+	public ResponseEntity<List<ReplyDTO>> list(@RequestParam(defaultValue = "") String mode,
 			@RequestParam(defaultValue = "") String keyword) {
 		HashMap<String, String> params = new HashMap<String, String>();
 
 		params.put("mode", mode);
 		params.put("keyword", keyword);
 
-		return new ResponseEntity<List<BoardCommunityDTO>>(boardCommunityService.getBoardList(params), HttpStatus.OK);
+		return new ResponseEntity<List<ReplyDTO>>(replyService.getReplyList(params), HttpStatus.OK);
 	}
 
-	@PostMapping("/board")
-	public ResponseEntity<String> write(BoardCommunityDTO board) {
-		boardCommunityService.writeBoard(board);
+	@PostMapping("/board/reply")
+	public ResponseEntity<String> write(ReplyDTO reply) {
+		replyService.writeReply(reply);
 		return new ResponseEntity<String>(SUCCESS, HttpStatus.CREATED);
 	}
 
-	@GetMapping("/board/{id}")
-	public ResponseEntity<BoardCommunityDTO> detail(@PathVariable int id) {
+	@GetMapping("/board//reply/{id}")
+	public ResponseEntity<ReplyDTO> detail(@PathVariable int id) {
 		try {
-			return new ResponseEntity<BoardCommunityDTO>(boardCommunityService.getBoard(id), HttpStatus.OK);
+			return new ResponseEntity<ReplyDTO>(replyService.getReply(id), HttpStatus.OK);
 		} catch (Exception e) {
-			throw new BoardNotFoundException(id + "번 게시글은 없다.");
+			throw new BoardNotFoundException(id + "의 댓글이 없습니다.");
 		}
 	}
 
-	// 게시글 수정
-	@PutMapping("/board")
-	public ResponseEntity<String> update(BoardCommunityDTO board) {
-		boardCommunityService.modifyBoard(board);
+	// 댓글 수정
+	@PutMapping("/board/reply")
+	public ResponseEntity<String> update(ReplyDTO reply) {
+		replyService.modifyReply(reply);
 		return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 	}
 
-	// 게시글 삭제
-	@DeleteMapping("/board/{id}")
+	// 댓글 삭제
+	@DeleteMapping("/board/reply/{id}")
 	public ResponseEntity<String> delete(@PathVariable int id) {
-		if (boardCommunityService.removeBoard(id)) {
+		if (replyService.removeReply(id)) {
 			return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
 		}
 		return new ResponseEntity<String>(FAIL, HttpStatus.NO_CONTENT);
 	}
 
 }
+
