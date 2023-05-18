@@ -7,18 +7,18 @@ public class ReplyDTO {
 	private int id;
 	private String content;
 	private String writer;
-	private LocalDate date;
+	private LocalDate regdate;
 	
 	public ReplyDTO() {
 		
 	}
 	
-	public ReplyDTO(String content, String writer, LocalDate date) {
+	public ReplyDTO(String content, String writer, LocalDate regdate) {
 		
 		this.id = id;
 		this.content = content;
 		this.writer = writer;
-		this.date = date;
+		this.regdate = regdate;
 		
 	}
 
@@ -48,17 +48,17 @@ public class ReplyDTO {
 		this.writer = writer;
 	}
 
-	public LocalDate getDate() {
-		return date;
+	public LocalDate getRegdate() {
+		return regdate;
 	}
 
-	public void setDate(LocalDate date) {
-		this.date = date;
+	public void setRegdate(LocalDate regdate) {
+		this.regdate = regdate;
 	}
 
 	@Override
 	public String toString() {
-		return "ReplyDTO [content=" + content + ", writer=" + writer + ", date=" + date + "]";
+		return "ReplyDTO [content=" + content + ", writer=" + writer + ", regdate=" + regdate + "]";
 	}
 	
 	

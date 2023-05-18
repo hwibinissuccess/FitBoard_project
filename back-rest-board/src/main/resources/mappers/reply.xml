@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.board.model.dao.ReplyDao">
+	
+	<resultMap type="reply" id="replyMap">
+		<id column="id" property="id" />
+		<result column="content" property="content" />
+		<result column="writer" property="writer" />
+		<result column="regdate" property="regdate" />
+		
+	</resultMap>
+	
+	<insert id="insertReply" parameterType="Reply" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO reply (id, content, writer, regdate)
+		VALUES (#{id},#{content}, #{writer}, #{regdate})
+	</insert>
+
+	<update id="updateReply" parameterType="Reply">
+		UPDATE reply
+		SET
+		content = #{content},
+		writer = #{writer},
+		date = #{regdate}
+		WHERE id = #{id}
+	</update>
+	
+	<delete id="deleteReply" parameterType="int">
+		DELETE FROM reply WHERE id = #{id}
+	</delete>
+
+	<select id="selectOne" resultMap="replyMap" parameterType="int">
+		SELECT id, content, writer, regdate
+		FROM reply
+		WHERE id = #{id}
+	</select>
+
+
+	<select id="selectList" resultMap="replyMap" parameterType="java.util.HashMap">
+		SELECT id, content, writer, regdate
+		FROM reply
+		
+	</select>
+</mapper>
