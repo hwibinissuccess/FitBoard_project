@@ -23,18 +23,19 @@ public class UserRestController {
 	@Autowired
 	private UserService userService;
 
-	// 전체 유저목록 가져와~~
+	// 전체 유저목록 가져오기
 	@GetMapping("/users")
 	public List<UserDTO> userList() {
 		return userService.getUserList();
 	}
 
-	// 회원가입을 해보자 (form data 형식으로 넘어왔다.
+	// 회원가입 (form data 형식으로 넘어왔다.)
 	@PostMapping("/signup")
 	public ResponseEntity<Integer> signup(UserDTO user) {
 		int result = userService.signup(user);
 		//result 가 0이면 등록 x, 1이면 등록 된거야~~
-		//등록한 유저정보를 반환하겠다. Integer 대시 User 요런것을 반환하면 좋겠다.
+		//등록한 유저정보를 반환하겠다. 
+		//Integer 대시 User 요런것을 반환하면 좋겠다.
 		return new ResponseEntity<Integer>(result, HttpStatus.CREATED);
 	}
 
