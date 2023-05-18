@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ssafy.board.exception.BoardNotFoundException;
 import com.ssafy.board.model.dto.BoardCommunityDTO;
+import com.ssafy.board.model.service.BoardCommunityService;
 
 @RestController
 @RequestMapping("/api")
