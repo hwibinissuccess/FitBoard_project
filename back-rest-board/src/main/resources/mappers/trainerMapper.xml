@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.board.model.dao.TrainerDao">
+	<select id="selectAll" resultType="Trainer">
+		SELECT 
+			t.id as id,
+			t.password as password,
+			t.image as image,
+			t.profile as profile,
+			t.phone as phone,
+			t.address as address,
+			t.score as score,
+		FROM trainers t,
+	</select>
+	
+	<!-- 트레이너 아이디, 비번, 이미지 불러오기 -->
+	<select id="selectOne" parameterType="String" resultType="Trainer">
+		SELECT id, password, image
+		FROM trainers
+		WHERE id = #{id}
+	</select>
+
+
+	<!-- 가입시 아이디, 비번 등등~ 모든 자료를 받아내기 -->
+	<insert id="insertTrainer" parameterType="Trainer">
+		INSERT INTO trainers 
+		VALUES (#{id}, #{password}, #{image}, #{profile}, #{phone},  #{address},  #{score})
+	</insert>
+	
+</mapper>
