@@ -14,12 +14,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<insert id="insertBoard" parameterType="BoardApplyDTO" keyProperty="id" useGeneratedKeys="true">
-		INSERT INTO board (id, title, content, default_max, volunteers, writer)
-		VALUES (#{id},#{title}, #{content}, #{default_max}, #{volunteers}, #{writer})
+		INSERT INTO boardApply ( title, content, default_max, volunteers, writer)
+		VALUES (#{title}, #{content}, #{default_max}, #{volunteers}, #{writer})
 	</insert>
 
 	<update id="updateBoard" parameterType="BoardApplyDTO">
-		UPDATE board
+		UPDATE boardApply
 		SET
 		title = #{title},
 		content = #{content},
@@ -30,19 +30,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 	
 	<delete id="deleteBoard" parameterType="int">
-		DELETE FROM board WHERE id = #{id}
+		DELETE FROM boardApply WHERE id = #{id}
 	</delete>
 
 	<select id="selectOne" resultMap="boardMap" parameterType="int">
 		SELECT id, title, content,default_max, volunteers, writer
-		FROM board
+		FROM boardApply
 		WHERE id = #{id}
 	</select>
 
 
 	<select id="selectList" resultMap="boardMap" parameterType="java.util.HashMap">
 		SELECT id, title, content,default_max, volunteers, writer
-		FROM board
+		FROM boardApply
 		
 	</select>
 </mapper>

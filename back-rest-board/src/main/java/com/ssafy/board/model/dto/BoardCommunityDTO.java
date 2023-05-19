@@ -14,7 +14,7 @@ public class BoardCommunityDTO {
 	public BoardCommunityDTO() {
 	}
 	
-	public BoardCommunityDTO(String title, String content, LocalDate date, int number, String writer) {
+	public BoardCommunityDTO(int id, String title, String content, LocalDate date, int number, String writer) {
 		super();
 		this.id = id;
 		this.title = title;

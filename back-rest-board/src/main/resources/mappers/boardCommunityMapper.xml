@@ -9,41 +9,43 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="title" property="title" />
 		<result column="content" property="content" />
 		<result column="writer" property="writer" />
-		<result column="number" property="number" />
 		<result column="reg_date" property="regDate" />
 	</resultMap>
 	
-	<insert id="insertBoard" parameterType="BoardCommunityDTO" keyProperty="id" useGeneratedKeys="true">
-		INSERT INTO board (id, title, content, writer)
-		VALUES (#{id}, #{title}, #{content}, #{writer})
+	<insert id="insertBoard" parameterType="BoardCommunityDTO">
+		INSERT INTO boardCommunity (title, content, writer)
+		VALUES ( #{title}, #{content}, #{writer})
 	</insert>
 
 	<update id="updateBoard" parameterType="BoardCommunityDTO">
-		UPDATE board
+		UPDATE boardCommunity
 		SET
 		title = #{title},
 		writer = #{writer},
 		content = #{content},
-		number = #{number}
 		WHERE id = #{id}
+		
+		
+		
+		
 	</update>
 	
 	<delete id="deleteBoard" parameterType="int">
-		DELETE FROM board WHERE id = #{id}
+		DELETE FROM boardCommunity WHERE id = #{id}
 	</delete>
 
 	<select id="selectOne" resultMap="boardMap" parameterType="int">
-		SELECT id, title, writer, content, number
+		SELECT id, title, writer, content
 		date_format(reg_date, '%Y-%m-%d %H:%i:%s') as reg_date
-		FROM board
+		FROM boardCommunity
 		WHERE id = #{id}
 	</select>
 
 
 	<select id="selectList" resultMap="boardMap" parameterType="java.util.HashMap">
-		SELECT id, title, writer, content, number
+		SELECT id, title, writer, content
 		date_format(reg_date, '%Y-%m-%d %H:%i:%s') as reg_date
-		FROM board
+		FROM boardCommunity
 		
 	</select>
 </mapper>
