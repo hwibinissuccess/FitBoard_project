@@ -1,29 +1,74 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import HomeView from "../views/HomeView.vue";
+import BoardView from "../views/BoardView.vue";
+import TMDBView from "../views/TMDBView.vue";
 
-Vue.use(VueRouter)
+import BoardCreate from "../components/board/BoardCreate.vue";
+import BoardList from "../components/board/BoardList.vue";
+import BoardDetail from "../components/board/BoardDetail.vue";
+import BoardUpdate from "../components/board/BoardUpdate.vue";
+
+import TMDBPopular from "../components/tmdb/TMDBPopular.vue";
+import UserLogin from "../components/user/UserLogin.vue";
+
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    name: "home",
+    component: HomeView,
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+    path: "/board",
+    component: BoardView,
+    children: [
+      {
+        path: "",
+        name: "boardList",
+        component: BoardList,
+      },
+      {
+        path: "create",
+        name: "boardCreate",
+        component: BoardCreate,
+      },
+      {
+        path: ":id",
+        name: "boardDetail",
+        component: BoardDetail,
+      },
+      {
+        path: "update",
+        name: "boardUpdate",
+        component: BoardUpdate,
+      },
+    ],
+  },
+  {
+    path: "/tmdb",
+    name: "tmdb",
+    component: TMDBView,
+    children: [
+      {
+        path: "popular",
+        name: "popular",
+        component: TMDBPopular,
+      },
+    ],
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: UserLogin,
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
