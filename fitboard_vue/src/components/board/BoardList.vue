@@ -36,6 +36,7 @@
         :total-rows="boardCount"
         :per-page="perPage"
         align="center"
+<<<<<<< HEAD
 
   ></b-pagination>
   
@@ -55,11 +56,32 @@
     </b-form>
   </div>
 </div>
+=======
+      ></b-pagination>
+  
+  
+      <div>
+        <b-form inline>
+          <b-form-select v-model="mode">
+            <b-form-select-option value="1">제목</b-form-select-option>
+            <b-form-select-option value="2">내용</b-form-select-option>
+            <b-form-select-option value="3">제목+내용</b-form-select-option>
+          </b-form-select>
+          <b-form-input type="text" v-model="keyword" />
+          <b-button variant="danger" @click="search">검색</b-button>
+        </b-form>
+      </div>
+    </div>
+>>>>>>> d7cbc2f8fb6ea05f5c0821bdfd27b8ed484c163e
   </template>
   
   <script>
   import { mapState } from 'vuex';
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> d7cbc2f8fb6ea05f5c0821bdfd27b8ed484c163e
   export default {
     name: 'BoardList',
     data() {
@@ -86,6 +108,7 @@
       this.$store.dispatch('getBoards');
     },
     methods: {
+<<<<<<< HEAD
       registing(){
         //  여기에 입력해야합니당~ 리다이렉트를 할지 아니면 다음 html로 넘길지.
         
@@ -93,6 +116,8 @@
       },
 
 
+=======
+>>>>>>> d7cbc2f8fb6ea05f5c0821bdfd27b8ed484c163e
       search() {
         const payload = {
           mode: this.mode,
@@ -104,4 +129,9 @@
   };
   </script>
   
+<<<<<<< HEAD
   <style></style>
+=======
+  <style></style>
+  
+>>>>>>> d7cbc2f8fb6ea05f5c0821bdfd27b8ed484c163e

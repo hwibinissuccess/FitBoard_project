@@ -13,16 +13,27 @@
           cols="30"
           rows="10"
           v-model="board.content"
+<<<<<<< HEAD
 
     ></textarea>
     <button @click="updateBoard">수정</button>
   </fieldset>
 </div>
+=======
+        ></textarea>
+        <button @click="updateBoard">수정</button>
+      </fieldset>
+    </div>
+>>>>>>> d7cbc2f8fb6ea05f5c0821bdfd27b8ed484c163e
   </template>
   
   <script>
   import { mapState } from 'vuex';
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> d7cbc2f8fb6ea05f5c0821bdfd27b8ed484c163e
   export default {
     name: 'BoardUpdate',
     computed: {
@@ -41,4 +52,9 @@
   };
   </script>
   
+<<<<<<< HEAD
   <style></style>
+=======
+  <style></style>
+  
+>>>>>>> d7cbc2f8fb6ea05f5c0821bdfd27b8ed484c163e

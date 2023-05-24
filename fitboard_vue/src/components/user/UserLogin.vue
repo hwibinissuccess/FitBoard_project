@@ -1,5 +1,6 @@
 <template>
     <div>
+<<<<<<< HEAD
         <div>
       <h2>Please Log In</h2>
       <div id="loginForm">
@@ -55,4 +56,36 @@ import router from '@/router'
   width: 500px;
   margin: auto;
 }
+=======
+      <h3>로그인</h3>
+      <div>
+          <input type="text" v-model.trim="user.id" placeholder="아디">
+          <input type="password" v-model.trim="user.password" placeholder="비번">
+          <button @click="login">로그인</button>
+      </div>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+      name: "UserLogin",
+      data() {
+          return {
+              user : {
+                  id: "",
+                  password: ""
+              }
+          }
+      },
+      methods: {
+          login(){
+              this.$store.dispatch('userLogin', this.user)
+          }
+      },
+  }
+  </script>
+  
+  <style>
+  
+>>>>>>> d7cbc2f8fb6ea05f5c0821bdfd27b8ed484c163e
   </style>
