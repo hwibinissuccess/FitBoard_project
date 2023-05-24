@@ -5,7 +5,7 @@ import router from "@/router";
 
 Vue.use(Vuex);
 
-const REST_API = `http://localhost:9999/api`;
+const REST_API = `http://localhost:9999/`;
 
 export default new Vuex.Store({
   state: {
@@ -37,7 +37,7 @@ export default new Vuex.Store({
       let params = null;
       if (payload) params = payload;
 
-      const API_URL = `${REST_API}/board`;
+      const API_URL = `${REST_API}/community/board`;
       axios({
         url: API_URL,
         method: "GET",
@@ -144,5 +144,5 @@ export default new Vuex.Store({
         });
     },
   },
-  modules: {},
+
 });

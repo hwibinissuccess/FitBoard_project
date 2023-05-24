@@ -49,8 +49,8 @@
       </b-form-select>
       <b-form-input type="text" v-model="keyword" />
       <b-button variant="danger" @click="search">검색하기</b-button>
+      <router-link class="w3-button w3-green w3-round" to="/create">등록하기</router-link>
       <b-button variant="info" @click="search">등록하기</b-button>
-      
       <!--이거 버튼 두개 연결해야함-->
     </b-form>
   </div>
@@ -58,50 +58,45 @@
   </template>
   
   <script>
-  import { mapState } from 'vuex';
+  import router from '@/router';
+import { mapState } from 'vuex';
 
   export default {
-    name: 'BoardList',
+    name: "BoardList",
     data() {
-      return {
-        currentPage:1,
-        perPage: 3,
-        mode: 1,
-        keyword: '',
-      };
+        return {
+            currentPage: 1,
+            perPage: 3,
+            mode: 1,
+            keyword: "",
+        };
     },
     computed: {
-      ...mapState(['boards']),
-      boardCount() {
-        return this.boards.length
-      },
-      pageBoardList(){
-        return this.boards.slice(
-          (this.currentPage-1) * this.perPage,
-          this.currentPage*this.perPage
-        )
-      }
+        ...mapState(["boards"]),
+        boardCount() {
+            return this.boards.length;
+        },
+        pageBoardList() {
+            return this.boards.slice((this.currentPage - 1) * this.perPage, this.currentPage * this.perPage);
+        }
     },
     created() {
-      this.$store.dispatch('getBoards');
+        this.$store.dispatch("getBoards");
     },
     methods: {
-      registing(){
-        //  여기에 입력해야합니당~ 리다이렉트를 할지 아니면 다음 html로 넘길지.
-        
-
-      },
-
-
-      search() {
-        const payload = {
-          mode: this.mode,
-          keyword: this.keyword,
-        };
-        this.$store.dispatch('getBoards', payload);
-      },
+        registing() {
+            //  여기에 입력해야합니당~ 리다이렉트를 할지 아니면 다음 html로 넘길지.
+        },
+        search() {
+            const payload = {
+                mode: this.mode,
+                keyword: this.keyword,
+            };
+            this.$store.dispatch("getBoards", payload);
+        },
     },
-  };
+    components: { router }
+};
   </script>
   
   <style></style>

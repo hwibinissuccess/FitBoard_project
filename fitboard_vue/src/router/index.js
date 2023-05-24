@@ -8,10 +8,12 @@ import BoardCreate from "../components/board/BoardCreate.vue";
 import BoardList from "../components/board/BoardList.vue";
 import BoardDetail from "../components/board/BoardDetail.vue";
 import BoardUpdate from "../components/board/BoardUpdate.vue";
+import BoardFitbridge from "../components/board/BoardFitbridge.vue";
+
 
 import TMDBPopular from "../components/tmdb/TMDBPopular.vue";
 import UserLogin from "../components/user/UserLogin.vue";
-
+import UserRegister from "../components/user/UserRegister.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -44,6 +46,11 @@ const routes = [
         name: "boardUpdate",
         component: BoardUpdate,
       },
+      {
+        path: "/BoardFitbridge",
+        name: "BoardFitbridge",
+        component: BoardFitbridge,
+      },
     ],
   },
   {
@@ -62,6 +69,11 @@ const routes = [
     path: "/login",
     name: "login",
     component: UserLogin,
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: UserRegister,
   },
 ];
 

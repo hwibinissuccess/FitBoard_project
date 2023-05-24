@@ -1,6 +1,6 @@
 <template>
-    <div>
-      <h2>게시판 뷰</h2>
+    <div id="wrapper">
+      <h2> 뷰입니다.</h2>
       <router-view />
     </div>
   </template>
@@ -10,6 +10,11 @@
     name: 'BoardView',
   };
   </script>
+
+
+<style scoped>
+
+#wrapper{
   
-  <style></style>
-  
+}
+</style>
