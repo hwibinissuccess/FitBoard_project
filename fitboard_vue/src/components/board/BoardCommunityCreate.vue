@@ -10,34 +10,37 @@
         <input type="text" id="writer" v-model="writer" /><br />
         <label for="content">내용 : </label>
         <textarea  id="content" cols="30" rows="10" v-model="content"></textarea>
-        <button @click="createBoard">등록</button>
+        <router-link class="w3-button w3-green w3-round" to="/board/create">등록하기</router-link>
       </fieldset>
     </div>
     </div>
   </template>
   
   <script>
+import router from '@/router';
+
   export default {
-    name: 'BoardCreate',
+    name: "BoardCreate",
     data() {
-      return {
-        title: '',
-        writer: '',
-        content: '',
-      };
+        return {
+            title: "",
+            writer: "",
+            content: "",
+        };
     },
     methods: {
-      createBoard() {
-        let board = {
-          id: 0,
-          title: this.title,
-          writer: this.writer,
-          content: this.content,
-        };
-        this.$store.dispatch('createBoard', board);
-      },
+        createBoard() {
+            let board = {
+                id: 0,
+                title: this.title,
+                writer: this.writer,
+                content: this.content,
+            };
+            this.$store.dispatch("createBoard", board);
+        },
     },
-  };
+    components: { router }
+};
   </script>
   
   <style scoped>

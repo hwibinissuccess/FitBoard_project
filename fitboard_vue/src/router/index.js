@@ -9,9 +9,10 @@ import BoardList from "../components/board/BoardList.vue";
 import BoardDetail from "../components/board/BoardDetail.vue";
 import BoardUpdate from "../components/board/BoardUpdate.vue";
 import BoardFitbridge from "../components/board/BoardFitbridge.vue";
-
+import BoardCommunityCreate from "../components/board/BoardCommunityCreate.vue";
 
 import TMDBPopular from "../components/tmdb/TMDBPopular.vue";
+
 import UserLogin from "../components/user/UserLogin.vue";
 import UserRegister from "../components/user/UserRegister.vue";
 Vue.use(VueRouter);
@@ -50,6 +51,11 @@ const routes = [
         path: "/BoardFitbridge",
         name: "BoardFitbridge",
         component: BoardFitbridge,
+      },
+      {
+        path: "/createCommunity",
+        name: "BoardCommunityCreate",
+        component: BoardCommunityCreate,
       },
     ],
   },

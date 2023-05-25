@@ -49,7 +49,7 @@
       </b-form-select>
       <b-form-input type="text" v-model="keyword" />
       <b-button variant="danger" @click="search">검색하기</b-button>
-      <router-link class="w3-button w3-green w3-round" to="/create">등록하기</router-link>
+      <router-link class="w3-button w3-green w3-round" to="/board/create">등록하기</router-link>
       <b-button variant="info" @click="search">등록하기</b-button>
       <!--이거 버튼 두개 연결해야함-->
     </b-form>

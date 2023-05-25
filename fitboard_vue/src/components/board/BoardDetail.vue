@@ -14,11 +14,6 @@
   
   <script>
   import { mapState } from 'vuex';
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> d7cbc2f8fb6ea05f5c0821bdfd27b8ed484c163e
   export default {
     name: 'BoardDetail',
     computed: {
@@ -40,9 +35,4 @@
   };
   </script>
   
-<<<<<<< HEAD
   <style></style>
-=======
-  <style></style>
-  
->>>>>>> d7cbc2f8fb6ea05f5c0821bdfd27b8ed484c163e

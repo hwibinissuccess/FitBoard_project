@@ -1,11 +1,7 @@
 <template>
   <div class="home">
     <img src="@/assets/logo2.png" alt="Logo" class="logo" />
-<<<<<<< HEAD
     <h2 class="title">FitBada에 오신걸 환영합니다!</h2>
-=======
-    <h2 class="title">게시판 환영</h2>
->>>>>>> d7cbc2f8fb6ea05f5c0821bdfd27b8ed484c163e
     <hr>
     <div class="icon-container">
       <b-icon icon="camera" class="icon"></b-icon>
@@ -29,10 +25,6 @@ export default {
 };
 </script>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d7cbc2f8fb6ea05f5c0821bdfd27b8ed484c163e
 <style scoped>
 .home {
   text-align: center;
